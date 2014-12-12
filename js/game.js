@@ -39,7 +39,7 @@ var CONST = {
     NUM_cannonballs: 600,
     NUM_groupOftanks: 20,
     NUM_groupOfhelicopters: 20,
-    NumofPlatforms :10,
+    NumofPlatforms :100,
     DEFAULT_GRAVITY: 0
 };
 
@@ -262,12 +262,15 @@ var tankIndex;
     counterhelicopter += dt;
         if(counterhelicopter >= counterThresholdhelicopter) {
             counterhelicopter = 0;
-       
+    function createRandomNum() {
+        var randonInt = Utils.getRandomInt(100,500);
+        return randonInt
+    }   
     for(var c=0; c<CONST.NUM_groupOfhelicopters; c++) {
-        var randonInt = Utils.getRandomInt(200,400)
+        
         if (!groupOfhelicopters[c].alive) {
                 groupOfhelicopters[c].x = 2200; // ------spawn lotankion
-                groupOfhelicopters[c].y = randonInt;
+                groupOfhelicopters[c].y = createRandomNum();
                 groupOfhelicopters[c].alive = true;
                 groupOfhelicopters[c].reset()
                 helicopterIndex = c;
