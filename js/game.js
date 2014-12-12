@@ -149,12 +149,13 @@ var world = {
 // So some things will move faster and others will move slower.
 // This gives the perception of depth, even though the screen is 2D.
 var moon = {
-    x: 420,
+    x: 100,
     y: 100,
     width: 150,
     height: 150,
     parallaxSpeed: 0.25
 }
+
 
 
 // A gradient for the backdrop
@@ -489,7 +490,7 @@ var tankIndex;
     var newWorldX = world.x;
     
     //////////////////////////////////////
-    
+  
     if (player.velocityX < 0) {
         if (newPlayerX < canvas.width * 0.5) {
 
@@ -499,8 +500,10 @@ var tankIndex;
                 newWorldX = 0;
             } else {
                 newPlayerX = canvas.width * 0.5;
-
                 moon.x = moon.x - player.velocityX * moon.parallaxSpeed;
+                if (moon.x <= -300) {
+                    moon.x = 1200
+                };
                 for(var p = 0; p < tree.length; p++) {
                     tree[p].x = tree[p].x - player.velocityX * tree[p].parallaxSpeed;
                     treeTop[p].x = treeTop[p].x - player.velocityX * treeTop[p].parallaxSpeed;
@@ -521,8 +524,14 @@ var tankIndex;
             if(newWorldX + world.width < canvas.width) {
                 newWorldX = canvas.width - world.width;
             } else {
+
                 newPlayerX = canvas.width * 0.5;
+
                 moon.x = moon.x - player.velocityX * moon.parallaxSpeed;
+              
+                if (moon.x <= -300) {
+                    moon.x = 1200
+                };
                 for(var p = 0; p < tree.length; p++) {
                     tree[p].x = tree[p].x - player.velocityX * tree[p].parallaxSpeed;
                     treeTop[p].x = treeTop[p].x - player.velocityX * treeTop[p].parallaxSpeed;
