@@ -89,7 +89,7 @@ function createTreeTop() {
     this.y = 720 ;
     this.width = 40;
     this.height = 40;
-    this.parallaxSpeed = 1.25;
+    this.parallaxSpeed = 2.25;
     this.color = "green";
 };
 
@@ -103,7 +103,7 @@ function createTree() {
     this.y = 760 ;
     this.width = 20;
     this.height = 120;
-    this.parallaxSpeed = 1.25;
+    this.parallaxSpeed = 2.25;
     this.color = "#8C6C62";
 };
 
