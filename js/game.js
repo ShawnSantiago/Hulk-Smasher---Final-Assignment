@@ -414,7 +414,7 @@ var tankIndex;
                 player.x = player.x - 100;
                 groupOfhelicopters[c].cannonBall.kill();
                   
-                 if (player.hit == player.health) {
+                 if (player.health == 0) {
                     createExplosion(player.x+10, player.y, "#525252");
                     createExplosion(player.x, player.y, "#FFA318");
                     player.kill();
@@ -422,7 +422,7 @@ var tankIndex;
                     $('.dead').html("You Lose").addClass('reveal');
                     console.log("Player dead");
                 } else {
-                    player.hit++;                
+                   layer.health = player.health - 25 ;             
                 }
 
         } 
