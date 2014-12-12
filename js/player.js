@@ -44,7 +44,7 @@
 
 
     Player.prototype.update = function(deltaTime) {
-        
+        if (!player.died) {
         // We transfer the coordinates of the player
         // to it's visual representation (i.e. the sprite)
         this.sprite.x = this.x;
@@ -59,13 +59,14 @@
        
         // Now make sure the sprite updates
         this.sprite.update(deltaTime);
+        }
     }
 
     Player.prototype.kill = function() {
         this.died == true;
         this.sprite.pauseAnim = true;
-        this.width = 0; // width, height - same as sprite
-        this.height = 0;
+        this.y = 1000; 
+        this.sprite.numAnimFrames = 0;
     }
 
     Player.prototype.render = function(context) {
