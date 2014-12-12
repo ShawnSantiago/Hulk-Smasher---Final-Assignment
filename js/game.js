@@ -705,6 +705,7 @@ function render(dt) {
 function gameOver() {
     $('.refresh').html("Click Here To Play Again").addClass('reveal');
     $('.dead').html("You Lose").addClass('reveal');
+    render = null;
 };
 function updateScore() {
     score++;
