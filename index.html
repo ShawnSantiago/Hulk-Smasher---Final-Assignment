@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:700,400' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>    
+    <script type="text/javascript">
+
+    </script>
+    <style>
+        #appCanvas {
+            background-color:#eee;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .gameWindow {
+            /* Wrapping a class that has an absolute position
+               with one that is relative helps control where the
+               absolute position starts */
+            position:relative;
+        }
+        .dead {
+            font-family: Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,"Helvetica Inserat","Bitstream Vera Sans Bold","Arial Black","sans serif";
+            font-size: 72px;
+            position: absolute;
+            color: #c0392b;
+            width: 400px;
+            height: 200px;
+            top: 40%;
+            left:40%;
+            opacity: 0;
+
+        }
+        .scoreContainer{
+            font-family: Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,"Helvetica Inserat","Bitstream Vera Sans Bold","Arial Black","sans serif";
+            font-size:24px;
+            font-weight: 700;
+            position:absolute;
+            top: 1%;
+            left:10%;
+        }
+        .score {
+            font-family: Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,"Helvetica Inserat","Bitstream Vera Sans Bold","Arial Black","sans serif";
+            font-size:24px;
+            font-weight: 700;
+            position:absolute;
+            top: 1%;
+            left:110%;
+          
+        }
+
+
+        .reveal {
+            opacity: 1;
+        }
+      
+
+    </style>
+    <title>Week 13 - Jump and Pan</title>
+</head>
+<body>
+    <div class="gameWindow">       
+        <!-- The main frame of the game -->
+        <div class="scoreContainer">Score :<div class="score">0</div></div>
+        <div class="Win"></div>
+        <div class="dead"></div>
+        <canvas id="appCanvas" width="1080" height="880">
+            If you see this, Canvas not supported.
+        </canvas>
+        
+    </div>
+     
+    <script type="text/javascript" src="js/utils.js"></script>  
+    <script type="text/javascript" src="js/shape.js"></script>  
+    <script type="text/javascript" src="js/sprite.js"></script> 
+    <script type="text/javascript" src="js/tank.js"></script>
+    <script type="text/javascript" src="js/helicopter.js"></script>
+    <script type="text/javascript" src="js/cannonball.js"></script>
+    <script type="text/javascript" src="js/explosion.js"></script>
+    <script type="text/javascript" src="js/particle.js"></script>
+    <script type="text/javascript" src="js/player.js"></script>   
+    <script type="text/javascript" src="js/game.js"></script>  
+    <script type="text/javascript" src="js/input.js"></script> 
+</body>
+</html>
