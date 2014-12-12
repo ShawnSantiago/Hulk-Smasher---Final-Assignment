@@ -39,7 +39,7 @@ var CONST = {
     NUM_cannonballs: 600,
     NUM_groupOftanks: 20,
     NUM_groupOfhelicopters: 20,
-    NumofPlatforms :100,
+    NumofPlatforms :600,
     DEFAULT_GRAVITY: 0
 };
 
@@ -139,7 +139,7 @@ function createPlatform() {
 var world = {
     x: 0,
     y: 0,
-    width: 5000,
+    width: 15000,
     height: canvas.height
 }
 
@@ -422,7 +422,7 @@ var tankIndex;
                     $('.dead').html("You Lose").addClass('reveal');
                     console.log("Player dead");
                 } else {
-                   layer.health = player.health - 25 ;             
+                   player.health = player.health - 25 ;             
                 }
 
         } 
