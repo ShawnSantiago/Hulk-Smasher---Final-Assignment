@@ -29,6 +29,7 @@
             top: 40%;
             left:40%;
             opacity: 0;
+            text-align: center;
 
         }
         .scoreContainer{
@@ -49,6 +50,37 @@
           
         }
 
+        .timerContainer{
+            font-family: Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,"Helvetica Inserat","Bitstream Vera Sans Bold","Arial Black","sans serif";
+            font-size:24px;
+            font-weight: 700;
+            position:absolute;
+            top: 1%;
+            left:20%;
+        }
+        #countdown {
+            font-family: Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,"Helvetica Inserat","Bitstream Vera Sans Bold","Arial Black","sans serif";
+            font-size:24px;
+            font-weight: 700;
+            position:absolute;
+            top: 1%;
+            left:110%;
+          
+        }
+        .refresh {
+            font-family: Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,"Helvetica Inserat","Bitstream Vera Sans Bold","Arial Black","sans serif";
+            font-size: 22px;
+            position: absolute;
+            color: #2ecc71;
+            width: 400px;
+            height: 200px;
+            text-align: center;
+            top: 50%;
+            left:40%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
 
         .reveal {
             opacity: 1;
@@ -62,8 +94,11 @@
     <div class="gameWindow">       
         <!-- The main frame of the game -->
         <div class="scoreContainer">Score :<div class="score">0</div></div>
+        <div class="timerContainer">Timer :<div id="countdown">100</div></div>
+        
         <div class="Win"></div>
         <div class="dead"></div>
+        <div class="refresh" onclick="refreshPage()"></div>
         <canvas id="appCanvas" width="1080" height="880">
             If you see this, Canvas not supported.
         </canvas>

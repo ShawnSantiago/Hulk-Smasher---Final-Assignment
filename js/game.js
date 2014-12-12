@@ -63,8 +63,31 @@ animalSpriteSheet.onload = function() {
 
 characerSpriteSheet.src = 'assets/sumoHulk_spriteSheet_x4.png';
 animalSpriteSheet.src = 'assets/Baddies-MS2M.gif';
+var seconds = 31;
+var temp;
+var stopCountDown;//Used to start/stop the timer
 
+function countdown() {
 
+    if (seconds <= 0) {
+        render = null;
+        player.kill();
+        gameOver();
+    }
+
+    seconds--;
+    temp = document.getElementById('countdown');
+    temp.innerHTML = seconds;
+    stopCountDown = setTimeout(countdown, 1000);
+} 
+
+countdown();
+
+function stopTimer() { //Stops the timer, is called in the playerDied() function
+
+    clearTimeout(stopCountDown);
+
+}
 var score = 0;
 var cannonBalls = [];
 var groupOftanks = [];
@@ -352,10 +375,9 @@ var tankIndex;
                     createExplosion(player.x+10, player.y, "#525252");
                     createExplosion(player.x, player.y, "#FFA318");
                     player.kill(); 
-                    $('.dead').html("You Lose").addClass('reveal');
-                    console.log("Player dead");
+                    gameOver();
                 } else {
-                    player.health = player.health - 25 ;  
+                    player.health = player.health - 10 ;  
                     console.log(player.health);          
                 }
             }
@@ -420,10 +442,10 @@ var tankIndex;
                     createExplosion(player.x, player.y, "#FFA318");
                     player.kill();
                     
-                    $('.dead').html("You Lose").addClass('reveal');
+                    gameOver();
                     console.log("Player dead");
                 } else {
-                   player.health = player.health - 25 ;             
+                   player.health = player.health - 10 ;             
                 }
 
         } 
@@ -680,8 +702,15 @@ function render(dt) {
     //Whenever you lose health
    
 }
-
+function gameOver() {
+    $('.refresh').html("Click Here To Play Again").addClass('reveal');
+    $('.dead').html("You Lose").addClass('reveal');
+};
 function updateScore() {
     score++;
     $('.score').html(score);
 }
+
+function refreshPage() {
+    location.reload();
+};
